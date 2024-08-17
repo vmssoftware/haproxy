@@ -1,0 +1,64 @@
+product VSI X86VMS HAPROXY V1.7-9a FULL ;
+
+--
+-- Execute the preconfigure procedure
+--
+-- (none)
+
+--
+-- Make sure VMS 9.2 or above is installed
+--
+   if ((not <software VSI X86VMS VMS version minimum E9.2>)) ;
+      error NO_MIN_VMS abort ;
+   end if ;
+
+--
+-- Directories...
+--
+-- (none)
+
+--
+-- Files...
+--
+   scope global;
+      file "[sysexe]haproxy.exe";
+   end scope;
+
+--
+-- License information
+--
+-- (none)
+
+--
+-- Start-up and shutdown scripts
+--
+   scope global;
+      file "[sys$startup]haproxy$startup.com";
+      file "[sys$startup]haproxy$shutdown.com";
+      file "[sys$startup]haproxy$run.com";
+      file "[sys$startup]haproxy.cfg";
+   end scope;
+
+--
+-- Release notes
+--
+-- (none)
+
+--
+-- Do post-install tasks
+--
+-- (none)
+
+--
+-- Okay, done. Tell the user what to do next.
+--
+   information POST_INSTALL  phase after with helptext;
+
+
+--
+-- All done
+--
+
+end product;
+
+

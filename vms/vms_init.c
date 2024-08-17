@@ -1,0 +1,70 @@
+extern void __acl_init();
+extern void __backend_init();
+extern void __cfgparse_init();
+extern void __dumpstats_module_init();
+extern void __comp_fetch_init();
+extern void __connection_init();
+extern void __dns_init();
+extern void __ev_poll_init();
+extern void __ev_select_init();
+extern void __filters_init();
+extern void __flt_http_comp_init();
+extern void __spoe_init();
+extern void __flt_trace_init();
+extern void __frontend_init();
+extern void __listener_init();
+extern void __map_init();
+extern void __memory_init();
+extern void __payload_init();
+extern void __pipe_module_init();
+extern void __http_protocol_init();
+extern void __tcp_protocol_init();
+extern void __uxst_protocol_init();
+extern void __proxy_module_init();
+extern void __sample_init();
+extern void __server_listener_init();
+extern void __server_init();
+extern void __stat_init();
+extern void __stick_table_init();
+extern void __stream_init();
+extern void __tcp_rules_init();
+extern void __vars_init();
+extern void __ssl_sock_init();
+
+void HAProxy_VMS_init()
+{
+	__acl_init();
+	__backend_init();
+	__cfgparse_init();
+	__dumpstats_module_init();
+	__comp_fetch_init();
+	__connection_init();
+	__dns_init();
+	__ev_poll_init();
+	__ev_select_init();
+	__filters_init();
+	__flt_http_comp_init();
+	__spoe_init();
+	__flt_trace_init();
+	__frontend_init();
+	__listener_init();
+	__map_init();
+	__memory_init();
+	__payload_init();
+	__pipe_module_init();
+	__http_protocol_init();
+	__tcp_protocol_init();
+	__uxst_protocol_init();
+	__proxy_module_init();
+	__sample_init();
+	__server_listener_init();
+	__server_init();
+	__stat_init();
+	__stick_table_init();
+	__stream_init();
+	__tcp_protocol_init();
+	__vars_init();
+#ifdef USE_OPENSSL
+	__ssl_sock_init();
+#endif
+}

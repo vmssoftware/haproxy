@@ -1,0 +1,60 @@
+product VSI I64VMS HAPROXY V1.7-9 FULL ;
+
+--
+-- Execute the preconfigure procedure
+--
+-- (none)
+
+--
+-- Make sure VMS V8.4 or above is installed
+--
+   if ((not <software VSI I64VMS VMS version minimum V8.4>) and (not <software HP I64VMS VMS version minimum V8.4>)) ;
+      error NO_MIN_VMS abort ;
+   end if ;
+
+--
+-- Directories...
+--
+-- (none)
+
+--
+-- Files...
+--
+   file "[sysexe]haproxy.exe";
+
+--
+-- License information
+--
+-- (none)
+
+--
+-- Start-up and shutdown scripts
+--
+   file "[sys$startup]haproxy$startup.com";
+   file "[sys$startup]haproxy$shutdown.com";
+   file "[sys$startup]haproxy$run.com";
+   file "[sys$startup]haproxy.cfg";
+
+--
+-- Release notes
+--
+-- (none)
+
+--
+-- Do post-install tasks
+--
+-- (none)
+
+--
+-- Okay, done. Tell the user what to do next.
+--
+   information POST_INSTALL  phase after with helptext;
+
+
+--
+-- All done
+--
+
+end product;
+
+
